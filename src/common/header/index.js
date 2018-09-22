@@ -18,26 +18,6 @@ import {
 } from "./style";
 
 
-const getListArea = (show) => {
-  if (show) {
-    return (
-      <NavSearchInfo>
-        <SearchInfoTitle>
-          热门搜索
-        <SearchInfoSwitch>换一批</SearchInfoSwitch>
-        </SearchInfoTitle>
-        <SearchInfoList>
-          <SearchInfoItem>教育</SearchInfoItem>
-          <SearchInfoItem>简书</SearchInfoItem>
-          <SearchInfoItem>生活</SearchInfoItem>
-          <SearchInfoItem>旅游</SearchInfoItem>
-        </SearchInfoList>
-      </NavSearchInfo>
-    )
-  } else {
-    return null;
-  }
-}
 
 class Header extends Component {
   render() {
@@ -67,12 +47,33 @@ class Header extends Component {
               <i className={focused ? "focused iconfont" : "iconfont"}>
                 &#xe62a;
               </i>
-              {getListArea(focused)}
+              {this.getListArea(focused)}
             </NavSearchWrapper>
           </Nav>
         </HeaderWrapper>
       </HeaderApp>
     );
+  }
+
+  getListArea(show){
+    if (show) {
+      return (
+        <NavSearchInfo>
+          <SearchInfoTitle>
+            热门搜索
+          <SearchInfoSwitch>换一批</SearchInfoSwitch>
+          </SearchInfoTitle>
+          <SearchInfoList>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>简书</SearchInfoItem>
+            <SearchInfoItem>生活</SearchInfoItem>
+            <SearchInfoItem>旅游</SearchInfoItem>
+          </SearchInfoList>
+        </NavSearchInfo>
+      )
+    } else {
+      return null;
+    }
   }
 }
 
