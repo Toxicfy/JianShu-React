@@ -1,15 +1,43 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { actionCreators } from "./store";
 import {
-  HeaderWrapper,
   Logo,
   Nav,
+  Button,
   NavItem,
   HeaderApp,
+  HeaderWrapper,
   NavSearch,
-  Button,
+  NavSearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoList,
+  SearchInfoItem,
   NavSearchWrapper
 } from "./style";
+
+
+const getListArea = (show) => {
+  if (show) {
+    return (
+      <NavSearchInfo>
+        <SearchInfoTitle>
+          热门搜索
+        <SearchInfoSwitch>换一批</SearchInfoSwitch>
+        </SearchInfoTitle>
+        <SearchInfoList>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>简书</SearchInfoItem>
+          <SearchInfoItem>生活</SearchInfoItem>
+          <SearchInfoItem>旅游</SearchInfoItem>
+        </SearchInfoList>
+      </NavSearchInfo>
+    )
+  } else {
+    return null;
+  }
+}
 
 class Header extends Component {
   render() {
@@ -20,7 +48,6 @@ class Header extends Component {
           <Logo href="/" />
           <Nav>
             <NavItem className="left active">
-              <i className="iconfont">&#xe604;</i>
               首页
             </NavItem>
             <NavItem className="left">下载App</NavItem>
@@ -40,6 +67,7 @@ class Header extends Component {
               <i className={focused ? "focused iconfont" : "iconfont"}>
                 &#xe62a;
               </i>
+              {getListArea(focused)}
             </NavSearchWrapper>
           </Nav>
         </HeaderWrapper>
@@ -50,23 +78,17 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    focused: state.focused
+    focused: state.getIn(["header", "focused"])
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     handleInputFocus() {
-      const action = {
-        type: "search_focus"
-      };
-      dispatch(action);
+      dispatch(actionCreators.searchFocus());
     },
     handleInputBlur() {
-      const action = {
-        type: "search_blur"
-      };
-      dispatch(action);
+      dispatch(actionCreators.searchBlur());
     }
   };
 };
