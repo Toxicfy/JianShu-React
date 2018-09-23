@@ -5,19 +5,17 @@ import {
   Logo,
   Nav,
   Button,
-  NavItem,
   HeaderApp,
   HeaderWrapper,
+  NavItem,
+  NavSearchWrapper,
   NavSearch,
   NavSearchInfo,
   SearchInfoTitle,
   SearchInfoSwitch,
   SearchInfoList,
-  SearchInfoItem,
-  NavSearchWrapper
+  SearchInfoItem
 } from "./style";
-
-
 
 class Header extends Component {
   render() {
@@ -27,9 +25,7 @@ class Header extends Component {
         <HeaderWrapper>
           <Logo href="/" />
           <Nav>
-            <NavItem className="left active">
-              首页
-            </NavItem>
+            <NavItem className="left active">首页</NavItem>
             <NavItem className="left">下载App</NavItem>
             <Button className="write">
               <i className="iconfont">&#xe674;</i>
@@ -47,7 +43,7 @@ class Header extends Component {
               <i className={focused ? "focused iconfont" : "iconfont"}>
                 &#xe62a;
               </i>
-              {this.getListArea(focused)}
+              {this.getListArea()}
             </NavSearchWrapper>
           </Nav>
         </HeaderWrapper>
@@ -55,22 +51,21 @@ class Header extends Component {
     );
   }
 
-  getListArea(show){
-    if (show) {
+  getListArea() {
+    if (this.props.focused) {
       return (
         <NavSearchInfo>
           <SearchInfoTitle>
             热门搜索
-          <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
-            <SearchInfoItem>教育</SearchInfoItem>
-            <SearchInfoItem>简书</SearchInfoItem>
-            <SearchInfoItem>生活</SearchInfoItem>
-            <SearchInfoItem>旅游</SearchInfoItem>
+            {this.props.list.map(item => {
+              return <SearchInfoItem key={item}>{item}</SearchInfoItem>;
+            })}
           </SearchInfoList>
         </NavSearchInfo>
-      )
+      );
     } else {
       return null;
     }
@@ -79,14 +74,16 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    focused: state.getIn(["header", "focused"])
+    focused: state.getIn(["header", "focused"]),
+    list: state.getIn(["header", "list"])
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     handleInputFocus() {
-      dispatch(actionCreators.searchFocus());
+      dispatch(actionCreators.searchList()); //数据请求
+      dispatch(actionCreators.searchFocus()); //聚焦动画
     },
     handleInputBlur() {
       dispatch(actionCreators.searchBlur());
