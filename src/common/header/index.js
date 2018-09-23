@@ -37,7 +37,7 @@ class Header extends Component {
             <NavSearchWrapper>
               <NavSearch
                 className={focused ? "focused" : ""}
-                onFocus={handleInputFocus.bind(this)}
+                onFocus={handleInputFocus.bind(this, this.props.list)}
                 onBlur={handleInputBlur.bind(this)}
               />
               <i className={focused ? "focused iconfont" : "iconfont"}>
@@ -52,18 +52,35 @@ class Header extends Component {
   }
 
   getListArea() {
-    if (this.props.focused) {
+    const {
+      focused,
+      list,
+      mouseIn,
+      page,
+      handleMouseEnter,
+      handleMouseLeave,
+      handleChangePage
+    } = this.props;
+    const newList = list.toJS();
+    const pageList = [];
+    for (let i = (page - 1) * 10; i < page * 10; i++) {
+      if (newList[i]) {
+        pageList.push(<SearchInfoItem key={i}>{newList[i]}</SearchInfoItem>);
+      }
+    }
+    if (focused || mouseIn) {
       return (
-        <NavSearchInfo>
+        <NavSearchInfo
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch onClick={handleChangePage}>
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
-          <SearchInfoList>
-            {this.props.list.map(item => {
-              return <SearchInfoItem key={item}>{item}</SearchInfoItem>;
-            })}
-          </SearchInfoList>
+          <SearchInfoList>{pageList}</SearchInfoList>
         </NavSearchInfo>
       );
     } else {
@@ -75,18 +92,31 @@ class Header extends Component {
 const mapStateToProps = state => {
   return {
     focused: state.getIn(["header", "focused"]),
-    list: state.getIn(["header", "list"])
+    list: state.getIn(["header", "list"]),
+    mouseIn: state.getIn(["header", "mouseIn"]),
+    page: state.getIn(["header", "page"])
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleInputFocus() {
-      dispatch(actionCreators.searchList()); //数据请求
+    handleInputFocus(list) {
       dispatch(actionCreators.searchFocus()); //聚焦动画
+      if (list.size === 0) {
+        dispatch(actionCreators.searchList()); //数据请求
+      }
     },
     handleInputBlur() {
       dispatch(actionCreators.searchBlur());
+    },
+    handleMouseEnter() {
+      dispatch(actionCreators.mouseEnter());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.mouseLeave());
+    },
+    handleChangePage() {
+      dispatch(actionCreators.changePage());
     }
   };
 };

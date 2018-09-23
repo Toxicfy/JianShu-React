@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import logoPic from '../../statics/logo.png';
-
+import logoPic from "../../statics/logo.png";
 
 export const HeaderApp = styled.div`
   height: 56px;
@@ -17,7 +16,7 @@ export const Logo = styled.a`
   position: absolute;
   top: 0;
   left: 0;
-  display:block;
+  display: block;
   width: 100px;
   height: 56px;
   background-image: url(${logoPic});
@@ -28,35 +27,35 @@ export const Nav = styled.div`
   margin: 0 auto;
   max-width: 1366px;
   height: 100%;
-`
+`;
 
 export const NavItem = styled.div`
   font-size: 17px;
   height: 56px;
   line-height: 26px;
   padding: 15px;
-  cursor:pointer;
-  &.active{
-    color:#ea6f5a;
+  cursor: pointer;
+  &.active {
+    color: #ea6f5a;
   }
-  &.left{
-    float:left;
+  &.left {
+    float: left;
   }
-  &.right{
-    float:right;
-    color:#969696;
+  &.right {
+    float: right;
+    color: #969696;
   }
-  .iconfont{
-    font-size:19px;
+  .iconfont {
+    font-size: 19px;
   }
-`
+`;
 /**
- * Header Search part 
+ * Header Search part
  */
 export const NavSearchWrapper = styled.div`
-  position:relative;
-  float:left;
-  .iconfont{
+  position: relative;
+  float: left;
+  .iconfont {
     position: absolute;
     top: 13px;
     right: 5px;
@@ -66,16 +65,16 @@ export const NavSearchWrapper = styled.div`
     color: #969696;
     text-align: center;
     border-radius: 15px;
-    &.focused{
+    &.focused {
       color: #fff;
       background: #969696;
     }
   }
-`
+`;
 export const NavSearch = styled.input.attrs({
   placeholder: "搜索"
 })`
-  margin-top:9px;
+  margin-top: 9px;
   margin-left: 20px;
   padding: 0 40px 0 20px;
   width: 160px;
@@ -84,16 +83,16 @@ export const NavSearch = styled.input.attrs({
   border: none;
   border-radius: 40px;
   background: #eee;
-  outline:none;
-  color:#666;
-  &::placeholder{
-     color:#999;
+  outline: none;
+  color: #666;
+  &::placeholder {
+    color: #999;
   }
-  &.focused{
-    width:200px;
+  &.focused {
+    width: 200px;
   }
   transition: width 0.5s ease-out;
-`
+`;
 
 export const NavSearchInfo = styled.div`
   position: absolute;
@@ -112,21 +111,22 @@ export const NavSearchInfo = styled.div`
     left: 20px;
     bottom: 99%;
   }
-`
+`;
 export const SearchInfoTitle = styled.div`
   margin-top: 20px;
   margin-bottom: 15px;
-  line-height:20px;
+  line-height: 20px;
   font-size: 14px;
   color: #969696;
-`
+`;
 export const SearchInfoSwitch = styled.span`
-  float:right;
-  font-size:13px;
-`
+  float: right;
+  font-size: 13px;
+  cursor: pointer;
+`;
 export const SearchInfoList = styled.div`
-  overflow:hidden;
-`
+  overflow: hidden;
+`;
 
 export const SearchInfoItem = styled.span`
   display: block;
@@ -134,11 +134,11 @@ export const SearchInfoItem = styled.span`
   line-height: 20px;
   padding: 0 5px;
   margin: 0 10px 15px 0;
-  font-size:12px;
+  font-size: 12px;
   border: 1px solid #ddd;
   color: #787878;
   border-radius: 3px;
-`
+`;
 // Header Button
 export const Button = styled.div`
   float: right;
@@ -147,15 +147,15 @@ export const Button = styled.div`
   margin: 8px 15px 0;
   border-radius: 20px;
   font-size: 15px;
-  text-align:center;
-  border:1px solid #ea6f5a;
-  &.write{
+  text-align: center;
+  border: 1px solid #ea6f5a;
+  &.write {
     background: #ea6f5a;
     color: #fff;
     width: 100px;
   }
-  &.reg{
-    width:80px;
+  &.reg {
+    width: 80px;
     color: #ea6f5a;
-  };
-`
+  }
+`;
