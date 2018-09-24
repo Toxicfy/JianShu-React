@@ -138,6 +138,7 @@ export const SearchInfoItem = styled.span`
   border: 1px solid #ddd;
   color: #787878;
   border-radius: 3px;
+  cursor: pointer;
 `;
 // Header Button
 export const Button = styled.div`
