@@ -26,7 +26,7 @@ export default class Home extends Component {
               this.state.bannerImageList.map((item) => {
                 return (
                   <div key={item}>
-                    <img src={item} alt=""/>
+                    <img src={item} alt="" />
                   </div>
                 )
               })
@@ -34,7 +34,9 @@ export default class Home extends Component {
           </Carousel>
           {/* recommend tags */}
         </HomeLeft>
-        <HomeRight></HomeRight>
+        <HomeRight>
+
+        </HomeRight>
       </HomeWrapper>
     )
   }
