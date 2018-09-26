@@ -1,13 +1,14 @@
 // 根组件
 import React, { Component } from "react";
 import { Route, BrowserRouter} from "react-router-dom";
-import Header from "./common/header";
 import { Provider } from "react-redux";
 import store from "./store";
 
+import Header from "./common/header";
 import Home from "./page/Home";
 import Detail from "./page/Detail";
 
+import 'antd/dist/antd.css'
 class App extends Component {
   render() {
     return (

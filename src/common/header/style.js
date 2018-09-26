@@ -27,6 +27,7 @@ export const Nav = styled.div`
   margin: 0 auto;
   max-width: 1366px;
   height: 100%;
+  overflow:hidden;
 `;
 
 export const NavItem = styled.div`

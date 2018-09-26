@@ -4,7 +4,6 @@ import { fromJS } from "immutable";
 const defalutState = fromJS({
   focused: false,
   list: [],
-  // 分页
   mouseIn: false,
   page: 1,
   totalPage: 0
