@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Collection from './components/Collection';
 import { HomeWrapper, HomeLeft, HomeRight, } from './style'
 import { Carousel } from 'antd'
 import axios from 'axios'
@@ -32,7 +33,8 @@ export default class Home extends Component {
               })
             }
           </Carousel>
-          {/* recommend tags */}
+          {/* toplic tags */}
+          <Collection />
         </HomeLeft>
         <HomeRight>
 
