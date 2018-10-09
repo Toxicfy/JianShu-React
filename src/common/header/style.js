@@ -27,7 +27,6 @@ export const Nav = styled.div`
   margin: 0 auto;
   max-width: 1366px;
   height: 100%;
-  overflow:hidden;
 `;
 
 export const NavItem = styled.div`
@@ -97,6 +96,8 @@ export const NavSearch = styled.input.attrs({
 
 export const NavSearchInfo = styled.div`
   position: absolute;
+  z-index: 11;
+  background: #fff;
   left: 22px;
   top: 56px;
   width: 240px

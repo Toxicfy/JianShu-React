@@ -66,7 +66,6 @@ export const CollectionMore = styled.div`
 
 // Right Side
 export const HomeRight = styled.div`
-  background: #eee;
   float: right;
   margin-left: 30px;
   width: 280px;
@@ -75,4 +74,10 @@ export const HomeRight = styled.div`
 export const HotBoardList = styled.div`
   display: flex;
   width: 280px;
+  img {
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+  }
 `;
