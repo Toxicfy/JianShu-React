@@ -22,13 +22,6 @@ export const HomeLeft = styled.div`
     overflow: hidden;
   }
 `;
-export const HomeRight = styled.div`
-  background: #eee;
-  float: right;
-  margin-left: 30px;
-  width: 280px;
-  min-height: 100px;
-`;
 
 // Collection组件
 export const CollectionWrapper = styled.div`
@@ -53,4 +46,33 @@ export const CollectionItem = styled.div`
     width: 32px;
     height: 32px;
   }
+`;
+
+export const CollectionMore = styled.div`
+  display: inline-block;
+  line-height: 34px;
+  a {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #787878;
+    cursor: pointer;
+  }
+  a:hover {
+    color: #787878;
+  }
+`;
+
+// ========================================================
+
+// Right Side
+export const HomeRight = styled.div`
+  background: #eee;
+  float: right;
+  margin-left: 30px;
+  width: 280px;
+  min-height: 100px;
+`;
+export const HotBoardList = styled.div`
+  display: flex;
+  width: 280px;
 `;

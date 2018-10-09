@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Collection from "./components/Collection";
+import HotBoard from "./components/HotBoard";
 import { HomeWrapper, HomeLeft, HomeRight } from "./style";
 import { actionCreater } from "./store";
 import { Carousel } from "antd";
@@ -13,8 +14,8 @@ class Home extends Component {
     return (
       <HomeWrapper>
         <HomeLeft>
-          {/* 轮播banner */}
-          <Carousel autoplay>
+          {/* banner */}
+          <Carousel autoplay speed="500">
             {this.props.bannerImageList.map(item => {
               return (
                 <div key={item}>
@@ -23,10 +24,14 @@ class Home extends Component {
               );
             })}
           </Carousel>
-          {/* 推荐标题 */}
+          {/* TitleCollection */}
           <Collection />
         </HomeLeft>
-        <HomeRight />
+
+        <HomeRight>
+          {/* Hot board */}
+          <HotBoard />
+        </HomeRight>
       </HomeWrapper>
     );
   }
@@ -35,8 +40,7 @@ class Home extends Component {
 // 获取state数据
 const mapStateToProps = state => {
   return {
-    bannerImageList: state.getIn(["home", "bannerImageList"]),
-    collectionList: state.getIn(["home", "collectionList"])
+    bannerImageList: state.getIn(["home", "bannerImageList"])
   };
 };
 // 触发action

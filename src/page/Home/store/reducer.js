@@ -2,8 +2,7 @@ import { fromJS } from "immutable";
 import * as constants from "./constants";
 
 const defalutState = fromJS({
-  bannerImageList: [],
-  collectionList: []
+  bannerImageList: []
 });
 
 export default (state = defalutState, action) => {
