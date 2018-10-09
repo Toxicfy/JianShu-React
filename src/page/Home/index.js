@@ -1,45 +1,55 @@
-import React, { Component } from 'react';
-import Collection from './components/Collection';
-import { HomeWrapper, HomeLeft, HomeRight, } from './style'
-import { Carousel } from 'antd'
-import axios from 'axios'
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      bannerImageList: []
-    }
-  }
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Collection from "./components/Collection";
+import { HomeWrapper, HomeLeft, HomeRight } from "./style";
+import { actionCreater } from "./store";
+import { Carousel } from "antd";
+
+class Home extends Component {
   componentDidMount() {
-    axios.get('./api/banner-image.json').then((res) => {
-      this.setState(() => ({
-        bannerImageList: res.data.data
-      }))
-    })
+    this.props.getBannerImgList();
   }
   render() {
     return (
       <HomeWrapper>
         <HomeLeft>
-          {/* banner */}
+          {/* 轮播banner */}
           <Carousel autoplay>
-            {
-              this.state.bannerImageList.map((item) => {
-                return (
-                  <div key={item}>
-                    <img src={item} alt="" />
-                  </div>
-                )
-              })
-            }
+            {this.props.bannerImageList.map(item => {
+              return (
+                <div key={item}>
+                  <img src={item} alt="" />
+                </div>
+              );
+            })}
           </Carousel>
-          {/* toplic tags */}
+          {/* 推荐标题 */}
           <Collection />
         </HomeLeft>
-        <HomeRight>
-
-        </HomeRight>
+        <HomeRight />
       </HomeWrapper>
-    )
+    );
   }
 }
+
+// 获取state数据
+const mapStateToProps = state => {
+  return {
+    bannerImageList: state.getIn(["home", "bannerImageList"]),
+    collectionList: state.getIn(["home", "collectionList"])
+  };
+};
+// 触发action
+const mapDispatchToProps = dispatch => {
+  return {
+    getBannerImgList() {
+      dispatch(actionCreater.bannerList());
+    }
+  };
+};
+
+// 创建连接
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
