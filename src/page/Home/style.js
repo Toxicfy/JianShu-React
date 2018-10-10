@@ -66,6 +66,53 @@ export const CollectionMore = styled.div`
   }
 `;
 
+export const ArticleWrapper = styled.div`
+  position: relative;
+`;
+export const ArticleItem = styled.div`
+  min-height: 140px;
+  position: relative;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px 2px 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  word-wrap: break-word;
+  .text-info {
+    width: 483px;
+    .title {
+      margin: -7px 0 4px;
+      display: inherit;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .desc {
+      margin: 0 0 8px;
+      font-size: 13px;
+      line-height: 24px;
+      color: #999;
+    }
+    .icon {
+      margin-left: 8px;
+      color: #ababab;
+    }
+  }
+  .image-info {
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    right: 0;
+    width: 125px;
+    height: 100px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      border: 1px solid #f0f0f0;
+    }
+  }
+`;
+
 // ========================================================
 
 // Right Side
@@ -87,6 +134,7 @@ export const HotBoardList = styled.div`
 `;
 
 export const DownloadArea = styled.div`
+  margin-top: 5px;
   margin-bottom: 30px;
   padding: 10px 22px;
   width: 100%;

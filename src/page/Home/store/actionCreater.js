@@ -14,3 +14,15 @@ export const bannerList = () => {
     });
   };
 };
+const getArticleInfo = data => ({
+  type: constants.GET_ARTICLE,
+  data
+});
+export const ArticleList = () => {
+  return dispatch => {
+    axios.get("./api/arcticle-info.json").then(res => {
+      const action = getArticleInfo(res.data.data);
+      dispatch(action);
+    });
+  };
+};
