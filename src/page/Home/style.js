@@ -23,7 +23,7 @@ export const HomeLeft = styled.div`
   }
 `;
 
-// Collection组件
+// Collection Component
 export const CollectionWrapper = styled.div`
   padding: 20px 0 10px 0;
   width: 100%;
@@ -66,6 +66,7 @@ export const CollectionMore = styled.div`
   }
 `;
 
+// Article Component
 export const ArticleWrapper = styled.div`
   position: relative;
 `;
@@ -122,6 +123,8 @@ export const HomeRight = styled.div`
   width: 280px;
   min-height: 100px;
 `;
+
+// HotBoard Component
 export const HotBoardList = styled.div`
   display: flex;
   width: 280px;
@@ -160,5 +163,61 @@ export const DownloadArea = styled.div`
       font-size: 13px;
       color: #999;
     }
+  }
+`;
+
+export const AuthorsWrapper = styled.div`
+  .title {
+    font-size: 14px;
+    color: #969696;
+    .right {
+      float: right;
+      cursor: pointer;
+    }
+    .icon {
+      margin: 2px 5px 0 0;
+    }
+  }
+  .viewAll {
+    margin-top: 20px;
+    text-align: center;
+    padding: 7px 7px 7px 12px;
+    left: 0;
+    width: 280px;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+  }
+`;
+
+export const AuthorsItem = styled.div`
+  margin-top: 15px;
+  line-height: 20px;
+  img {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+  }
+  .info {
+    span {
+      display: block;
+      font-size: 14px;
+    }
+    .desc {
+      margin-top: 2px;
+      font-size: 12px;
+      color: #969696;
+    }
+  }
+  .right {
+    float: right;
+    margin-top: -42px;
+    cursor: pointer;
+    color: #42c02e;
   }
 `;

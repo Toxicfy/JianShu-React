@@ -26,3 +26,16 @@ export const ArticleList = () => {
     });
   };
 };
+
+const getAuthors = data => ({
+  type: constants.GET_AUTHORS,
+  data
+});
+export const AuthorsList = () => {
+  return dispatch => {
+    axios.get("./api/user.json").then(res => {
+      const action = getAuthors(res.data.users);
+      dispatch(action);
+    });
+  };
+};

@@ -4,6 +4,7 @@ import Collection from "./components/Collection";
 import HotBoard from "./components/HotBoard";
 import DownloadApp from "./components/DownloadApp";
 import Article from "./components/Article";
+import RecommendAuthors from "./components/RecommendAuthors";
 import { HomeWrapper, HomeLeft, HomeRight } from "./style";
 import { actionCreater } from "./store";
 import { Carousel } from "antd";
@@ -37,6 +38,8 @@ class Home extends Component {
           <HotBoard />
           {/* Download App */}
           <DownloadApp />
+          {/* Recommended Authors */}
+          <RecommendAuthors />
         </HomeRight>
       </HomeWrapper>
     );

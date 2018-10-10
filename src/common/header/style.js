@@ -2,6 +2,11 @@ import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
 
 export const HeaderApp = styled.div`
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  width: 100%;
   height: 56px;
   border-bottom: 1px solid #f0f0f0;
   max-width: 1920px;
