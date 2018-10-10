@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Collection from "./components/Collection";
 import HotBoard from "./components/HotBoard";
+import DownloadApp from "./components/DownloadApp";
 import { HomeWrapper, HomeLeft, HomeRight } from "./style";
 import { actionCreater } from "./store";
 import { Carousel } from "antd";
@@ -31,6 +32,8 @@ class Home extends Component {
         <HomeRight>
           {/* Hot board */}
           <HotBoard />
+          {/* Download App */}
+          <DownloadApp />
         </HomeRight>
       </HomeWrapper>
     );

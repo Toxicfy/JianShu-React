@@ -60,6 +60,9 @@ export const CollectionMore = styled.div`
   a:hover {
     color: #787878;
   }
+  .icon-right {
+    margin-left: 5px;
+  }
 `;
 
 // ========================================================
@@ -79,5 +82,34 @@ export const HotBoardList = styled.div`
     min-height: 50px;
     margin-bottom: 6px;
     border-radius: 4px;
+  }
+`;
+
+export const DownloadArea = styled.div`
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+  display: flex;
+  img {
+    width: 60px;
+    height: 60px;
+    opacity: 0.85;
+  }
+  .info {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+    .title {
+      font-size: 15px;
+      color: #333;
+    }
+    .desc {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #999;
+    }
   }
 `;

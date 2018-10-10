@@ -35,7 +35,7 @@ export default class Collection extends Component {
           <CollectionMore>
             <a target="_blank">
               更多热门专题
-              <Icon type="right" />
+              <Icon type="right" className="icon-right" />
             </a>
           </CollectionMore>
         </CollectionWrapper>
