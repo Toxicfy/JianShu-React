@@ -29,6 +29,7 @@ export const CollectionWrapper = styled.div`
   width: 100%;
   overflow: hidden;
   min-height: 100px;
+  border-bottom: 1px solid #f0f0f0;
 `;
 export const CollectionItem = styled.div`
   display: inline-block;

@@ -10,7 +10,7 @@ class DownloadApp extends Component {
     return (
       <DownloadArea>
         <img
-          src="//cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png"
+          src="//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/Qrcode.png"
           alt="qrcode"
         />
         <div className="info">

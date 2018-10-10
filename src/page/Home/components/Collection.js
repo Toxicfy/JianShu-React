@@ -14,9 +14,6 @@ export default class Collection extends Component {
       this.setState(() => ({
         collectionList: res.data.data
       }));
-      console.log("====================================");
-      console.log(res.data.data);
-      console.log("====================================");
     });
   }
   render() {
