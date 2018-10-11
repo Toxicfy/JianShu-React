@@ -10,7 +10,7 @@ export const HeaderApp = styled.div`
   height: 56px;
   border-bottom: 1px solid #f0f0f0;
   max-width: 1920px;
-  min-width: 768px;
+  min-width: 820px;
 `;
 export const HeaderWrapper = styled.div`
   postion: reative;
@@ -29,6 +29,7 @@ export const Logo = styled.a`
 `;
 
 export const Nav = styled.div`
+  position: relative;
   margin: 0 auto;
   max-width: 1366px;
   height: 100%;
@@ -60,8 +61,8 @@ export const NavItem = styled.div`
  * Header Search part
  */
 export const NavSearchWrapper = styled.div`
-  position: relative;
-  float: left;
+  position: absolute;
+  left: 150px;
   .iconfont {
     position: absolute;
     top: 13px;

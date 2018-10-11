@@ -80,7 +80,9 @@ export const ArticleItem = styled.div`
   word-wrap: break-word;
   .text-info {
     width: 483px;
+    color: #333;
     .title {
+      cursor: pointer;
       margin: -7px 0 4px;
       display: inherit;
       font-size: 18px;
@@ -95,7 +97,10 @@ export const ArticleItem = styled.div`
     }
     .icon {
       margin-left: 8px;
-      color: #ababab;
+      color: #b4b4b4;
+    }
+    .author {
+      color: #b4b4b4;
     }
   }
   .image-info {
