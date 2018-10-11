@@ -5,9 +5,9 @@ import HotBoard from "./components/HotBoard";
 import DownloadApp from "./components/DownloadApp";
 import Article from "./components/Article";
 import RecommendAuthors from "./components/RecommendAuthors";
-import { HomeWrapper, HomeLeft, HomeRight } from "./style";
+import { HomeWrapper, HomeLeft, HomeRight, SideTool } from "./style";
 import { actionCreater } from "./store";
-import { Carousel } from "antd";
+import { Carousel, BackTop, Icon } from "antd";
 
 class Home extends Component {
   componentDidMount() {
@@ -32,7 +32,6 @@ class Home extends Component {
           {/* Article part */}
           <Article />
         </HomeLeft>
-
         <HomeRight>
           {/* Hot board */}
           <HotBoard />
@@ -41,18 +40,24 @@ class Home extends Component {
           {/* Recommended Authors */}
           <RecommendAuthors />
         </HomeRight>
+        {/* To Top */}
+        <BackTop>
+          <SideTool onClick={this.props.scrollToTop}>
+            <Icon type="up" theme="outlined" className="top-icon" />
+          </SideTool>
+        </BackTop>
       </HomeWrapper>
     );
   }
 }
 
-// 获取state数据
 const mapStateToProps = state => {
   return {
-    bannerImageList: state.getIn(["home", "bannerImageList"])
+    bannerImageList: state.getIn(["home", "bannerImageList"]),
+    showSide: state.getIn(["home", "showSide"])
   };
 };
-// 触发action
+
 const mapDispatchToProps = dispatch => {
   return {
     getBannerImgList() {

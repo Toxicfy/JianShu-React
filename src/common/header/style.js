@@ -40,11 +40,13 @@ export const NavItem = styled.div`
   line-height: 26px;
   padding: 15px;
   cursor: pointer;
-  &.active {
-    color: #ea6f5a;
-  }
+
   &.left {
     float: left;
+    color: #333;
+  }
+  &.active {
+    color: #ea6f5a;
   }
   &.right {
     float: right;

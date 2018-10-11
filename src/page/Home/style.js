@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.div`
   width: 960px;
-  margin: 30px auto 0;
+  margin: 86px auto 0;
   overflow: hidden;
 `;
 export const HomeLeft = styled.div`
@@ -219,5 +219,22 @@ export const AuthorsItem = styled.div`
     margin-top: -42px;
     cursor: pointer;
     color: #42c02e;
+  }
+`;
+
+// SideTool Part
+export const SideTool = styled.div`
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1040;
+  border: 1px solid #eee;
+  .top-icon {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
   }
 `;
