@@ -12,11 +12,13 @@ class Article extends Component {
   render() {
     return (
       <ArticleWrapper>
-        {this.props.articleInfo.map(item => {
+        {this.props.articleInfo.map((item, index) => {
           return (
             <ArticleItem key={item.author}>
               <div className="text-info">
-                <Link className="title" to="/detail">{item.title}</Link>
+                <Link className="title" to={`/detail/${index}`}>
+                  {item.title}
+                </Link>
                 <div className="desc">
                   <span>{item.desc}</span>
                 </div>
