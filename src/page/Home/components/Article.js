@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { actionCreater } from "../store";
 import { ArticleWrapper, ArticleItem } from "../style";
+import { Link } from "react-router-dom";
 import { Icon } from "antd";
 
 class Article extends Component {
@@ -15,7 +16,7 @@ class Article extends Component {
           return (
             <ArticleItem key={item.author}>
               <div className="text-info">
-                <div className="title">{item.title}</div>
+                <Link className="title" to="/detail">{item.title}</Link>
                 <div className="desc">
                   <span>{item.desc}</span>
                 </div>

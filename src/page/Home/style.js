@@ -88,6 +88,7 @@ export const ArticleItem = styled.div`
       font-size: 18px;
       font-weight: 700;
       line-height: 1.5;
+      color: #333;
     }
     .desc {
       margin: 0 0 8px;
