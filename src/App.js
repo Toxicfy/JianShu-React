@@ -8,6 +8,7 @@ import Header from "./common/header";
 import Home from "./page/Home";
 import Detail from "./page/Detail";
 
+import "antd/dist/antd.css";
 class App extends Component {
   render() {
     return (
