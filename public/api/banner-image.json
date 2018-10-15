@@ -1,9 +1,9 @@
 {
   "status": "success",
   "data": [
-    "//upload.jianshu.io/admin_banners/web_images/4501/572782ecf027e81f518edce85f98036e88beb290.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
-    "//upload.jianshu.io/admin_banners/web_images/4482/daee8160945497802b201ce1ae1fa5395b85a51b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
-    "//upload.jianshu.io/admin_banners/web_images/4485/d0fb5320f8539c5c8b643fe88cbf512d1f4ced38.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540",
-    "//upload.jianshu.io/admin_banners/web_images/4492/cd08015f6bed434b24afbc02841c07c25c0ce0f3.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+    "https://raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/banner/bannerImage.jpg",
+    "https://raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/banner/bannerImage(1).jpg",
+    "https://raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/banner/bannerImage(2).jpg",
+    "https://raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/banner/bannerImage(3).jpg"
   ]
 }
