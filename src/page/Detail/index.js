@@ -2,16 +2,18 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import DetailFooter from "./components/DetailFooter";
 import DetailAuthor from "./components/DetailAuthor";
+import { actionCreater } from "./store";
 import { DetailTitle, DetailWrapper, AdPart, DetailContent } from "./style";
-
 class Detail extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.getDetailContent();
   }
   render() {
-    const { match, articleInfo, history, content } = this.props;
+    const { match, articleInfo, history, content, detailContent } = this.props;
     let id = match.params.id,
       currentData = articleInfo[id];
+    let currentDetailContent = detailContent[id];
     if (!currentData) {
       history.push("/");
       return <Fragment />;
@@ -27,9 +29,9 @@ class Detail extends Component {
           <DetailAuthor currentData={currentData} content={content} />
 
           {/* content */}
-          <DetailContent>
-            <span>内容待编写....</span>
-          </DetailContent>
+          <DetailContent
+            dangerouslySetInnerHTML={{ __html: currentDetailContent }}
+          />
 
           {/* detail footer */}
           <DetailFooter avator={currentData.avator} name={currentData.author} />
@@ -47,11 +49,20 @@ class Detail extends Component {
 const mapStateToProps = state => {
   return {
     articleInfo: state.getIn(["home", "articleInfo"]),
-    content: state.getIn(["detail", "content"])
+    content: state.getIn(["detail", "content"]),
+    detailContent: state.getIn(["detail", "detailContent"])
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getDetailContent: () => {
+      dispatch(actionCreater.getDetail());
+    }
   };
 };
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Detail);

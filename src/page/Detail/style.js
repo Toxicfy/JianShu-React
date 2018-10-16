@@ -54,7 +54,8 @@ export const AdPart = styled.div`
   margin-right: -560px;
   width: 180px;
   height: 260px;
-  background-image: url(//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/adImg.png);
+  // background-image: url(//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/adImg.png);
+  background-image: url(//cdn2.jianshu.io/assets/web/web-note-ad-side-banner-22096669b4c4b91c3b9266894e951aef.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50%;
@@ -62,13 +63,23 @@ export const AdPart = styled.div`
 
 export const DetailContent = styled.div`
   min-height: 550px;
-  position: relative;
-  color: #666;
-  span {
-    position: absolute;
-    top: 200px;
-    left: 220px;
-    font-size: 30px;
+  p {
+    color: #2f2f2f;
+    word-break: break-word !important;
+    word-break: break-all;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+  .image-container {
+    display: flex;
+  }
+  img {
+    width: 580px;
+    padding: 0 30px 0 50px;
+    height: auto;
+    vertical-align: middle;
+    margin: 0 auto 20px;
   }
 `;
 
@@ -77,6 +88,7 @@ export const DetailFooterWrapper = styled.div`
 `;
 
 export const FooterReward = styled.div`
+  margin-top: 20px;
   h3 {
     padding: 0 30px;
     margin-bottom: 20px;
