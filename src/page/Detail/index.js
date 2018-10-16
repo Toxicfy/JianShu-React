@@ -1,39 +1,44 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import {
-  DetailTitle,
-  DetailWrapper,
-  DetailAuthor,
-  AuthorInfo,
-  AdPart
-} from "./style";
+import DetailFooter from "./components/DetailFooter";
+import DetailAuthor from "./components/DetailAuthor";
+import { DetailTitle, DetailWrapper, AdPart, DetailContent } from "./style";
 
 class Detail extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
-    const { match, articleInfo, history, adImg } = this.props;
-    let id = match.params.id;
-    let currentData = articleInfo[id];
+    const { match, articleInfo, history, content } = this.props;
+    let id = match.params.id,
+      currentData = articleInfo[id];
     if (!currentData) {
       history.push("/");
       return <Fragment />;
     }
     return (
       <Fragment>
+        {/* content */}
         <DetailWrapper>
+          {/* title */}
           <DetailTitle>{currentData.title}</DetailTitle>
-          <DetailAuthor>
-            <img className="avatar" src={currentData.avator} alt="" />
-            <AuthorInfo>
-              <span className="name">{currentData.author}</span>
-              <span className="meta">
-                2018.10.07 00:12* 字数 1201 阅读 1155 评论 7 喜欢 23
-              </span>
-            </AuthorInfo>
-          </DetailAuthor>
+
+          {/* author */}
+          <DetailAuthor currentData={currentData} content={content} />
+
+          {/* content */}
+          <DetailContent>
+            <span>内容待编写....</span>
+          </DetailContent>
+
+          {/* detail footer */}
+          <DetailFooter avator={currentData.avator} name={currentData.author} />
         </DetailWrapper>
 
         {/* advertisement */}
         <AdPart />
+
+        {/* footer */}
       </Fragment>
     );
   }
