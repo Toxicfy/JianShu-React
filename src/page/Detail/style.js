@@ -54,8 +54,8 @@ export const AdPart = styled.div`
   margin-right: -560px;
   width: 180px;
   height: 260px;
-  // background-image: url(//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/adImg.png);
-  background-image: url(//cdn2.jianshu.io/assets/web/web-note-ad-side-banner-22096669b4c4b91c3b9266894e951aef.png);
+  background-image: url(//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/adImg.png);
+  // background-image: url(//cdn2.jianshu.io/assets/web/web-note-ad-side-banner-22096669b4c4b91c3b9266894e951aef.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50%;
@@ -72,7 +72,7 @@ export const DetailContent = styled.div`
     line-height: 1.7;
   }
   .image-container {
-    display: flex;
+    text-align: center;
   }
   img {
     width: 580px;
