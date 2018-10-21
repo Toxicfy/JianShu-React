@@ -26,13 +26,13 @@
 
 > #### *首页*
 
-![1540133754674](http://ovqjk8s4c.bkt.clouddn.com//Jianshu/1.png)
+![1540133754674](//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/mdImage/1.png)
 
 
 
 > #### *详情页*
 
-![1540135165517](http://ovqjk8s4c.bkt.clouddn.com//Jianshu/2.png)
+![1540135165517](//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/mdImage/2.png)
 
 
 
